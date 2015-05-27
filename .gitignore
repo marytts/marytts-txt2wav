@@ -1,2 +1,13 @@
+# maven
+target/
+
+# MaryTTS
+log/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
 # OSX
 .DS_Store
