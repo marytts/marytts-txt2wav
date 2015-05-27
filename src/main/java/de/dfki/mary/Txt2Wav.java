@@ -23,8 +23,10 @@ public class Txt2Wav {
 	public static void main(String[] args) throws MaryConfigurationException {
 		// init CLI options, args
 		Options options = new Options();
-		Option outputOption = Option.builder("o").longOpt(OUT_OPT).hasArg().argName("FILE").desc("Write output to FILE").build();
-		Option inputOption = Option.builder("i").longOpt(IN_OPT).hasArg().argName("FILE").desc("Read input from FILE").build();
+		Option outputOption = Option.builder("o").longOpt(OUT_OPT).hasArg().argName("FILE").desc("Write output to FILE")
+				.required().build();
+		Option inputOption = Option.builder("i").longOpt(IN_OPT).hasArg().argName("FILE")
+				.desc("Read input from FILE\n(otherwise, read from command line argument)").build();
 		options.addOption(outputOption);
 		options.addOption(inputOption);
 		HelpFormatter formatter = new HelpFormatter();
@@ -34,6 +36,7 @@ public class Txt2Wav {
 			line = parser.parse(options, args);
 		} catch (ParseException e) {
 			System.err.println("Error parsing command line options: " + e.getMessage());
+			formatter.printHelp(NAME, options, true);
 			System.exit(1);
 		}
 
@@ -46,7 +49,7 @@ public class Txt2Wav {
 			}
 		} else {
 			System.err.println("Please provide an output wav filename.");
-			formatter.printHelp(NAME, options);
+			formatter.printHelp(NAME, options, true);
 			System.exit(1);
 		}
 
@@ -70,7 +73,7 @@ public class Txt2Wav {
 		}
 		if (inputText == null) {
 			System.err.println("Please provide an input text.");
-			formatter.printHelp(NAME, options);
+			formatter.printHelp(NAME, options, true);
 			System.exit(1);
 		}
 
@@ -96,6 +99,7 @@ public class Txt2Wav {
 		double[] samples = MaryAudioUtils.getSamplesAsDoubleArray(audio);
 		try {
 			MaryAudioUtils.writeWavFile(samples, outputFileName, audio.getFormat());
+			System.out.println("Output written to " + outputFileName);
 		} catch (IOException e) {
 			System.err.println("Could not write to file: " + outputFileName + "\n" + e.getMessage());
 			System.exit(1);
