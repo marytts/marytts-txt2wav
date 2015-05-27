@@ -2,9 +2,17 @@
 
 An example project demonstrating use of MaryTTS in a deliberately standalone application
 
+## Build instructions
+
+Build with [Maven](http://maven.apache.org/):
+```
+$ mvn package
+```
+
 ## Usage
 
 ```
+$ java -jar target/txt2wav-1.0-SNAPSHOT.jar
 usage: txt2wav [-i <FILE>] -o <FILE>
  -i,--input <FILE>    Read input from FILE
                       (otherwise, read from command line argument)
@@ -15,4 +23,4 @@ usage: txt2wav [-i <FILE>] -o <FILE>
 
 This project is implemented in different languages/build tools, please refer to the corresponding git branches:
 
-* [Java/Maven](tree/maven)
+* **Java/Maven**
