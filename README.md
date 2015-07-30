@@ -16,3 +16,4 @@ usage: txt2wav [-i <FILE>] -o <FILE>
 This project is implemented in different languages/build tools, please refer to the corresponding git branches:
 
 * [Java/Maven](https://github.com/marytts/marytts-txt2wav/tree/maven)
+* [Java/Gradle](https://github.com/marytts/marytts-txt2wav/tree/gradle)
