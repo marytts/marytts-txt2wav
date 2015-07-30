@@ -4,9 +4,9 @@ An example project demonstrating use of MaryTTS in a deliberately standalone app
 
 ## Build instructions
 
-Build with [Maven](http://maven.apache.org/):
+Build with [Gradle](http://gradle.org/):
 ```
-$ mvn package
+$ ./gradlew shadowJar
 ```
 
 ## Usage
@@ -23,4 +23,5 @@ usage: txt2wav [-i <FILE>] -o <FILE>
 
 This project is implemented in different languages/build tools, please refer to the corresponding git branches:
 
-* **Java/Maven**
+* [Java/Maven](https://github.com/marytts/marytts-txt2wav/tree/maven)
+* **Java/Gradle**
