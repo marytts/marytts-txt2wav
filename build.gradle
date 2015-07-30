@@ -21,3 +21,7 @@ dependencies {
 }
 
 mainClassName = 'de.dfki.mary.Txt2Wav'
+
+shadowJar {
+    mergeServiceFiles()
+}
