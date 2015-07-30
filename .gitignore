@@ -1,5 +1,6 @@
-# maven
-target/
+# gradle
+build/
+.gradle/
 
 # MaryTTS
 log/
@@ -8,6 +9,10 @@ log/
 .classpath
 .project
 .settings/
+
+# IDEA
+.idea/
+*.iml
 
 # OSX
 .DS_Store
