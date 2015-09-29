@@ -12,7 +12,7 @@ $ ./gradlew shadowJar
 ## Usage
 
 ```
-$ java -jar target/txt2wav-1.0-SNAPSHOT.jar
+$ java -jar build/libs/txt2wav-1.0-SNAPSHOT.jar
 usage: txt2wav [-i <FILE>] -o <FILE>
  -i,--input <FILE>    Read input from FILE
                       (otherwise, read from command line argument)
