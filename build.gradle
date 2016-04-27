@@ -10,9 +10,6 @@ description 'An example project demonstrating use of MaryTTS in a deliberately s
 
 repositories {
     jcenter()
-    maven {
-        url 'https://oss.jfrog.org/artifactory/libs-release'
-    }
 }
 
 dependencies {
