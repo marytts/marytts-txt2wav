@@ -25,3 +25,5 @@ This project is implemented in different languages/build tools, please refer to 
 
 * [Java/Maven](https://github.com/marytts/marytts-txt2wav/tree/maven)
 * **Java/Gradle**
+* [sh](https://github.com/marytts/marytts-txt2wav/tree/sh)
+* [python](https://github.com/marytts/marytts-txt2wav/tree/python)
