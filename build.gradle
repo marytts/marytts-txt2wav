@@ -1,6 +1,6 @@
 plugins {
     id 'application'
-    id 'com.github.johnrengelman.shadow' version '1.2.2'
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
 }
 
 group 'de.dfki.mary'
@@ -10,14 +10,11 @@ description 'An example project demonstrating use of MaryTTS in a deliberately s
 
 repositories {
     jcenter()
-    maven {
-        url 'https://oss.jfrog.org/artifactory/libs-release'
-    }
 }
 
 dependencies {
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.3'
-    compile group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: '5.1.1'
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.3.1'
+    compile group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: '5.2-beta3'
 }
 
 mainClassName = 'de.dfki.mary.Txt2Wav'
