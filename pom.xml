@@ -19,13 +19,6 @@
 			<id>central</id>
 			<name>jcenter</name>
 			<url>http://jcenter.bintray.com</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>ojo</id>
-			<url>http://oss.jfrog.org/artifactory/libs-release</url>
 		</repository>
 	</repositories>
 
@@ -33,12 +26,12 @@
 		<dependency>
 			<groupId>commons-cli</groupId>
 			<artifactId>commons-cli</artifactId>
-			<version>1.3</version>
+			<version>1.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.dfki.mary</groupId>
 			<artifactId>voice-cmu-slt-hsmm</artifactId>
-			<version>5.1.1</version>
+			<version>5.2-beta3</version>
 		</dependency>
 	</dependencies>
 
@@ -47,7 +40,7 @@
 			<plugins>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.1</version>
+					<version>3.3</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-shade-plugin</artifactId>
