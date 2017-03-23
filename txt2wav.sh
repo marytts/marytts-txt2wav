@@ -1,9 +1,8 @@
 #!/bin/bash -eu
-# txt2ogg
 # - needs curl, sox and a running marytts-server
 # - starts as many threads as cores are available
-# - converts all textfiles in one directory to ogg-vorbis
-# - builds the audio filenames according to the textfiles (x.txt->x.ogg)
+# - converts all textfiles in one directory to wav
+# - builds the audio filenames according to the textfiles (x.txt->x.wav)
 # - renames textfiles during conversion to *.work
 # - renames finished textfiles to *.done
 # - comments successful conversion on stdout
