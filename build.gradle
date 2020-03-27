@@ -1,7 +1,16 @@
-plugins {
-    id 'application'
-    id 'com.github.johnrengelman.shadow' version '1.2.3'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+    }
 }
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+apply plugin: 'application'
 
 group 'de.dfki.mary'
 version '1.0-SNAPSHOT'

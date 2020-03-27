@@ -13,10 +13,11 @@ $ ./gradlew shadowJar
 
 ```
 $ java -jar build/libs/txt2wav-1.0-SNAPSHOT.jar
-usage: txt2wav [-i <FILE>] -o <FILE>
- -i,--input <FILE>    Read input from FILE
-                      (otherwise, read from command line argument)
- -o,--output <FILE>   Write output to FILE
+usage: txt2wav [-i <FILE>] -o <FILE> [-v <STRING>]
+ -i,--input <FILE>     Read input from FILE
+                       (otherwise, read from command line argument)
+ -o,--output <FILE>    Write output to FILE
+ -v,--voice <STRING>   Get the voice name STRING [default: cmu-slt-hsmm]
 ```
 
 ## Source code
