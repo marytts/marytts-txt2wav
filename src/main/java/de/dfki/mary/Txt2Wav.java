@@ -2,6 +2,8 @@ package de.dfki.mary;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.Set;
 
 import javax.sound.sampled.AudioInputStream;
 
@@ -19,6 +21,7 @@ public class Txt2Wav {
 	static final String NAME = "txt2wav";
 	static final String IN_OPT = "input";
 	static final String OUT_OPT = "output";
+        static final String VOICE_OPT = "voice";
 
 	public static void main(String[] args) throws MaryConfigurationException {
 		// init CLI options, args
@@ -27,8 +30,11 @@ public class Txt2Wav {
 				.required().build();
 		Option inputOption = Option.builder("i").longOpt(IN_OPT).hasArg().argName("FILE")
 				.desc("Read input from FILE\n(otherwise, read from command line argument)").build();
+		Option voiceOption = Option.builder("v").longOpt(VOICE_OPT).hasArg().argName("STRING")
+				.desc("Get the voice name STRING [default: cmu-slt-hsmm]").build();
 		options.addOption(outputOption);
 		options.addOption(inputOption);
+		options.addOption(voiceOption);
 		HelpFormatter formatter = new HelpFormatter();
 		CommandLineParser parser = new DefaultParser();
 		CommandLine line = null;
@@ -59,7 +65,7 @@ public class Txt2Wav {
 			String inputFileName = line.getOptionValue(IN_OPT);
 			File file = new File(inputFileName);
 			try {
-				inputText = FileUtils.readFileToString(file);
+				inputText = FileUtils.readFileToString(file, Charset.defaultCharset());
 			} catch (IOException e) {
 				System.err.println("Could not read from file " + inputFileName + ": " + e.getMessage());
 				System.exit(1);
@@ -77,6 +83,16 @@ public class Txt2Wav {
 			System.exit(1);
 		}
 
+
+		// get inputthe voice name
+		String voiceName = null;
+		if (line.hasOption(VOICE_OPT)) {
+                        voiceName = line.getOptionValue(VOICE_OPT);
+		} else {
+                        voiceName = "cmu-slt-hsmm";
+                }
+                System.out.println("Voice used is " + voiceName);
+
 		// init mary
 		LocalMaryInterface mary = null;
 		try {
@@ -85,6 +101,9 @@ public class Txt2Wav {
 			System.err.println("Could not initialize MaryTTS interface: " + e.getMessage());
 			throw e;
 		}
+
+                // Set voice / language
+                mary.setVoice(voiceName);
 
 		// synthesize
 		AudioInputStream audio = null;
