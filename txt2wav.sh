@@ -11,9 +11,9 @@
 
 textextension='txt'
 audioformat='wav'
-lang='de'
+lang='en_US'
 maryserver='http://localhost:59125'
-voice='dfki-pavoque-styles'
+voice='cmu-slt-hsmm'
 
 cores=`grep -c ^processor /proc/cpuinfo`
 curl_data="INPUT_TYPE=TEXT&OUTPUT_TYPE=AUDIO&AUDIO=WAVE_FILE&LOCALE=$lang&VOICE=$voice"
